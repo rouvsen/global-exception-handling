@@ -1,18 +1,16 @@
-package com.rouvsen.globalexceptionhandling.exception.handling.global;
+package com.rouvsen.globalexceptionhandling.exception.handling.global.v1;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.*;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, List<PropertyException>>> handleValidationErrors(MethodArgumentNotValidException ex) {
         List<PropertyException> errorList = ex.getBindingResult().getFieldErrors()
                 .stream()

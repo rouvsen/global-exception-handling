@@ -1,4 +1,4 @@
-package com.rouvsen.globalexceptionhandling.exception.handling.global;
+package com.rouvsen.globalexceptionhandling.exception.handling.global.v1;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
