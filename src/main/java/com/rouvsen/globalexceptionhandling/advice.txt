@@ -1,0 +1,25 @@
+You can use > ResponseEntity<APIError>
+
+ex.getLocalizedMessage() < Wrong way because formal message is so long for client and misunderstanding
+by the way, the best choice if you like:
+
+@Builder
+@Data
+public class APIError {
+
+    private String errorMessage;
+
+    private String errorCode;
+
+    private String request;
+
+    private String requestType;
+
+    private String customMessage;
+
+    //also you can add
+    private Map<String, List<PropertyException>> errors;
+    errors.put("errors", new ArrayList<PropertyException>);
+    errors.get("errors").add(new PropertyException(bindingResult().getFieldsError().getFieldName + defaultMessage));
+
+}
